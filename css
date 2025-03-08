@@ -1,0 +1,4 @@
+ <header>
+    
+    <button onclick="showHelp()" style="margin: 1rem; padding: 0.5rem 1rem; font-size: 1rem; border: none; background-color: #ff6600; color: white; border-radius: 5px; cursor: pointer;">Help</button>
+  </header>
