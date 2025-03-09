@@ -5,114 +5,180 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Portfolio</title>
   <style>
-   
-   /* General Styles */
-body {
-  font-family: 'Arial', sans-serif;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  background-color: #f4f4f9;
-}
+    /* General Styles */
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background-color: beige;
+    }
 
-/* Header */
-header {
-  background: #4CAF50;
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-  font-size: 1.5rem;
-}
+    /* Menu Styles */
+    .menu-container {
+      position: fixed; /* Fix the menu button to the side */
+      top: 20px;
+      left: 20px;
+      z-index: 1000;
+    }
 
-/* Section */
-section {
-  padding: 2rem;
-  margin: 1rem auto;
-  max-width: 800px;
-  background: white;
-  border-radius: 8px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-}
-section h2 {
-  color: #4CAF50;
-}
+    .menu-btn {
+      background: #4CAF50;
+      color: white;
+      font-size: 1.2rem;
+      border: none;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      cursor: pointer;
+    }
 
-/* Footer */
-footer {
-  background: #333;
-  color: white;
-  text-align: center;
-  padding: 1rem 0;
-  margin-top: 2rem;
-}
+    .menu-btn:hover {
+      background: #45a049;
+    }
 
-/* Links */
-a {
-  color: #af4c4c;
-  text-decoration: none;
-}
+    /* Hide Menu by Default */
+    .menu-bar {
+      list-style: none;
+      display: none; /* Hidden by default */
+      flex-direction: column;
+      background: white;
+      padding: 1rem;
+      margin: 0;
+      border-radius: 5px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      position: fixed; /* Float the menu items */
+      top: 60px; /* Below the menu button */
+      left: 20px; /* Align with button */
+    }
 
-a:hover {
-  text-decoration: underline;
-}
+    .menu-bar li {
+      margin: 10px 0;
+      text-align: center;
+    }
 
-/* Responsive Design */
-@media (max-width: 768px) {
-  header {
-    font-size: 1.2rem;
-  }
-  section {
-    padding: 1rem;
-  }
-}
+    .menu-bar a {
+      text-decoration: none;
+      color: grey;
+      font-weight: bold;
+      font-size: 1rem;
+    }
 
+    .menu-bar a:hover {
+      color: #4CAF50; /* Green hover effect */
+    }
+
+    /* Show Menu When Active */
+    .menu-bar.active {
+      display: flex;
+    }
+
+    /* Header */
+    header {
+      background: pink;
+      color: grey;
+      padding: 0.5rem 1rem;
+      text-align: center;
+      font-size: 1.5rem;
+    }
+
+    /* Section */
+    section {
+      padding: 2rem;
+      margin: 1rem auto;
+      max-width: 800px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    section h2 {
+      color: #4CAF50;
+    }
+
+    /* Footer */
+    footer {
+      background: #333;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+      margin-top: 2rem;
+    }
+
+    /* Links */
+    a {
+      color: #af4c4c;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      header {
+        font-size: 1.2rem;
+      }
+
+      section {
+        padding: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
+  <!-- Menu Button and Menu Bar -->
+  <div class="menu-container">
+    <button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+    <ul class="menu-bar" id="menu">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About Me</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+  
+  <!-- Header -->
   <header>
     <h1>My Portfolio</h1>
   </header>
-  <section>
-    <h2><strong>Welcome To my portfolio</strong>
-        </h2>
+  
+  <!-- Sections -->
+  <section id="home">
+    <h2><strong>Welcome To My Portfolio</strong></h2>
     <h3>About Me</h3>
-    <p>Hello! I'm Rithu from 4th sem CSE. Studying in GEC Hassan.</p>
+    <p>Hello! I'm Rithu from 4th sem CSE, studying in GEC Hassan.</p>
     <img src="https://tse4.mm.bing.net/th?id=OIP.OEUts09R4CB9pUeYy9K3LAAAAA&pid=Api&P=0&h=180" alt="Photo of GECH" style="width:150px; border-radius:50%;">
-      </img>
   </section>
-  <section>
+  
+  <section id="projects">
     <h2>Projects</h2>
     <p>Check out my projects below!</p>
-    <h1> Project 1: Personal Portfolio Website</h1>
-    <p>This project contains my portfolio repo created using github
-        <br>
-        <p>Click on the the link to view</p> 
-        </br>
-     </p>
+    <h1>Project 1: Personal Portfolio Website</h1>
+    <p>This project contains my portfolio repo created using GitHub.</p>
     <p><a href="https://github.com/Rithushreehm/portfolio.git" target="_blank">View on GitHub</a></p>
-    
-    
   </section>
-  <header>
-    
-    <button onclick="showHelp()" style="margin: 1rem; padding: 0.5rem 1rem; font-size: 1rem; border: none; background-color: #ff6600; color: white; border-radius: 5px; cursor: pointer;">Help</button>
-  </header>
   
+  <!-- Help Button -->
+  <button onclick="showHelp()" style="margin: 1rem; padding: 0.5rem 1rem; font-size: 1rem; border: none; background-color: #ff6600; color: white; border-radius: 5px; cursor: pointer;">Help</button>
+  
+  <!-- Footer -->
+  <footer>
+    <p>Contact me at: rithushreehm@gmail.com</p>
+  </footer>
+  
+  <!-- Scripts -->
   <script>
+    // Toggle Menu Function
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("active");
+    }
+
+    // Show Help Function
     function showHelp() {
       alert("Welcome to My Portfolio! Navigate through the sections to learn more about me and my projects. If you need further assistance, feel free to contact me!");
     }
   </script>
-   <p> 
-    <h3><stron>Thank You</stron></h3>
-  </p>
-  
-  <footer>
-    <p>Contact me at: rithushreehm@gmail.com</p>
-  </footer>
 </body>
 </html>
-
- 
-
-
